@@ -1,0 +1,15 @@
+{
+  "name": "app-node",
+  "version": "1.0.0",
+  "description": "Node application example",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sskender",
+  "license": "ISC"
+}
