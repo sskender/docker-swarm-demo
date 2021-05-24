@@ -1,6 +1,6 @@
 # Docker Swarm - demo
 
-Node and Python application load balancing in docker swarm with Nginx as a reverse proxy.
+Load balancing of Node and Python applications in Docker Swarm with Nginx as a reverse proxy.
 The setup decribed below is used on a single server machine, and a single docker node running as master. Deployment goal is to spawn multiple app instances accross many cpu cores.
 For other configurations, host names in nginx config file are ought to be changed accordingly.
 
@@ -64,6 +64,7 @@ Run app-node in docker swarm and expose port to local machine's port 3000:
 docker service create --name app-node-swarm -p 3000:5000 --replicas 2 sskender/app-node
 
 # verify
+docker ps
 docker service ls
 docker service ps app-node-swarm
 
@@ -72,6 +73,8 @@ docker service scale app-node-swarm=5
 
 # verify rescale
 docker ps
+docker service ls
+docker service ps app-node-swarm
 
 # verify in browser
 curl 127.0.0.1
@@ -153,3 +156,4 @@ docker swarm leave --force
 #### Resources
 
 - Load Balancing Containers in a Docker Swarm Cluster with NGINX and NGINX Plus (Nginx conference 2016)
+- [Docker orchestration with swarm and compose](https://www.ionos.com/digitalguide/server/know-how/docker-orchestration-with-swarm-and-compose/)
